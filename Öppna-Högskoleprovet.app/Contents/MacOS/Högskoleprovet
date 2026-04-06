@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PARENT_DIR="$(dirname "$(dirname "$(dirname "$DIR")")")"
+open -a "Google Chrome" "file://$PARENT_DIR/högskoleprovet.html"
