@@ -1,4 +1,4 @@
-# Högskoleprovet Timer
+# Högskoleprovet-timer
 
 En webbbaserad tidtagningsapp för att träna på Högskoleprovet. Följ med tiden för varje uppgift och få detaljerad feedback om din prestation.
 
