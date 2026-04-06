@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Högskoleprovet Timer</title>
+  <link rel="stylesheet" href="högskoleprovet.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Högskoleprovet Timer</h1>
+      <p>Appen startar automatiskt på uppgift 1. Tryck <strong>mellanslag</strong> för att byta till nästa uppgift.</p>
+      <div class="countdown">
+        <span class="label">Återstående tid</span>
+        <strong id="countdown-time">50:00</strong>
+      </div>
+    </header>
+
+    <section class="status-card">
+      <div class="status-item">
+        <span class="label">Aktuell uppgift</span>
+        <strong id="current-task">1</strong>
+      </div>
+      <div class="status-item">
+        <span class="label">Aktuell del</span>
+        <strong id="current-section">ORD</strong>
+      </div>
+      <div class="status-item">
+        <span class="label">Tid på uppgift</span>
+        <strong id="task-time">00:00</strong>
+      </div>
+    </section>
+
+    <section class="actions">
+      <div class="section-type">
+        <span class="label">Del</span>
+        <label><input type="radio" name="section-type" value="verbal" checked /> Verbal</label>
+        <label><input type="radio" name="section-type" value="kvantitativ" /> Kvantitativ</label>
+      </div>
+      <div class="buttons">
+        <button id="next-button" type="button">Nästa uppgift</button>
+        <button id="pause-button" type="button">Pausa</button>
+        <button id="reset-button" type="button">Starta om</button>
+        <button id="save-button" type="button">Spara som JPG</button>
+      </div>
+      <label class="schedule-toggle">
+        <input type="checkbox" id="schedule-toggle" />
+        Visa provstruktur
+      </label>
+    </section>
+
+    <section class="schedule-card" id="schedule-card" style="display: none;">
+      <h2>Provstruktur</h2>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Prov</th>
+            <th>Antal uppgifter</th>
+            <th>Uppgiftsnummer</th>
+            <th>Rekommenderad tid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ORD</td><td>10</td><td>1–10</td><td>3 minuter</td></tr>
+          <tr><td>LÄS</td><td>10</td><td>11–20</td><td>22 minuter</td></tr>
+          <tr><td>MEK</td><td>10</td><td>21–30</td><td>8 minuter</td></tr>
+          <tr><td>ELF</td><td>10</td><td>31–40</td><td>22 minuter</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="log-section">
+      <h2>Uppgiftslogg</h2>
+      <div class="log-note">När du trycker på mellanslag sparas tiden för aktuell uppgift och nästa uppgift börjar.</div>
+      <div id="sections-container"></div>
+    </section>
+  </div>
+
+  <div class="fixed-total">
+    <span class="label">Total tid</span>
+    <strong id="fixed-total-time">00:00</strong>
+  </div>
+
+  <script src="högskoleprovet.js"></script>
+</body>
+</html>
